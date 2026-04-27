@@ -25,6 +25,7 @@ exports.handler = async (event) => {
   if (event.httpMethod !== "POST") {
     return {
       statusCode: 405,
+      headers,
       body: JSON.stringify({ message: "Method Not Allowed" })
     };
   }
