@@ -1,2 +1,194 @@
-<h1>Backend is Running ✅</h1>
-<p>Talent Form API is live</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Status | Backend Active</title>
+    <style>
+        :root {
+            --royal-red: #8b0000;
+            --deep-burgundy: #4a0000;
+            --gold: #d4af37;
+            --soft-gold: #f9e29c;
+            --white: #ffffff;
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: linear-gradient(135deg, var(--deep-burgundy), #1a0000);
+            color: var(--white);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        /* Wrapper for the outside gears */
+        .page-container {
+            position: relative;
+            padding: 60px; /* Space for gears outside */
+        }
+
+        .status-container {
+            width: 90vw;
+            max-width: 850px; /* Landscape Width */
+            text-align: center;
+            padding: 40px 60px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid var(--gold);
+            border-radius: 12px;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.7);
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Gear Icons - Moved Outside */
+        .gear {
+            position: absolute;
+            color: var(--gold);
+            opacity: 0.4;
+            z-index: 1;
+            animation: rotate 12s linear infinite;
+            filter: drop-shadow(0 0 5px rgba(212, 175, 55, 0.5));
+        }
+
+        .gear-1 { top: -20px; left: -20px; font-size: 80px; }
+        .gear-2 { bottom: -30px; right: -30px; font-size: 100px; animation-direction: reverse; }
+        .gear-3 { top: 40%; right: -50px; font-size: 50px; animation-duration: 6s; }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* Rocket Animation */
+        .rocket-icon {
+            font-size: 70px;
+            display: inline-block;
+            margin-bottom: 10px;
+            filter: drop-shadow(0 0 15px var(--gold));
+            animation: float 3.5s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(-45deg); }
+            50% { transform: translateY(-15px) rotate(-45deg); }
+        }
+
+        /* Landscape Content Layout */
+        .status-box {
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            background: rgba(0, 0, 0, 0.4);
+            padding: 25px;
+            border-radius: 8px;
+            margin: 20px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        h1 {
+            color: var(--gold);
+            font-size: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            margin: 0;
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+        }
+
+        .status-text {
+            color: var(--soft-gold);
+            font-size: 1.1rem;
+            margin-top: 15px;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Loading Line */
+        .loader-wrapper {
+            width: 60%; /* Smaller width for landscape feel */
+            height: 3px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            margin: 30px auto 0 auto;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .loader-line {
+            width: 30%;
+            height: 100%;
+            background: var(--gold);
+            position: absolute;
+            animation: loading 2.5s infinite ease-in-out;
+            box-shadow: 0 0 15px var(--gold);
+        }
+
+        @keyframes loading {
+            0% { left: -30%; }
+            100% { left: 110%; }
+        }
+
+        .pulse-dot {
+            height: 12px;
+            width: 12px;
+            background-color: #00ff88;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 12px;
+            box-shadow: 0 0 12px #00ff88;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.4); opacity: 0.6; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .footer-note {
+            font-size: 0.75rem;
+            color: var(--soft-gold);
+            opacity: 0.5;
+            margin-top: 25px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="page-container">
+        <div class="gear gear-1">⚙️</div>
+        <div class="gear gear-2">⚙️</div>
+        <div class="gear gear-3">⚙️</div>
+
+        <div class="status-container">
+            <div class="rocket-icon">🚀</div>
+
+            <div class="status-box">
+                <h1>System Online</h1>
+                <div class="status-text">
+                    <span class="pulse-dot"></span> 
+                    BACKEND RUNNING &bull; API IS LIVE
+                </div>
+            </div>
+
+            <div class="loader-wrapper">
+                <div class="loader-line"></div>
+            </div>
+            
+            <div class="footer-note">
+                Secured Infrastructure &bull; Connection Active
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
